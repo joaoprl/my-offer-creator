@@ -1,0 +1,18 @@
+// 
+// Nav
+// 
+
+// Add styling for icons used within nav links
+.nav,
+.sb-sidenav-menu {
+    .nav-link .sb-nav-link-icon {
+        margin-right: 0.5rem; 
+    }
+    .nav-table-link {
+        padding-top: 0px !important;
+
+        .sb-nav-table-link-icon {
+            margin-right: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,121 @@
+nav(class=['sb-sidenav', 'accordion'] class=sidenavStyle)#sidenavAccordion
+        
+    .sb-sidenav-menu
+        
+        .nav
+    
+            .sb-sidenav-menu-heading
+                | Core
+            
+            a.nav-link(href='index.html')
+                .sb-nav-link-icon
+                    i.fas.fa-shopping-cart
+                | Offers
+
+            a.nav-link(href='segmentation.html')
+                .sb-nav-link-icon
+                    i.fas.fa-map-signs
+                | Segmentation
+            
+            a.nav-link(href='deployment.html')
+                .sb-nav-link-icon
+                    i.fas.fa-snowplow
+                | Deployment
+                
+            .sb-sidenav-menu-heading
+                | ML
+            
+            a.nav-link(href='recommendations.html')
+                .sb-nav-link-icon
+                    i.fas.fa-magic
+                | Predictions
+            
+            a.nav-link(href='feedback.html')
+                .sb-nav-link-icon
+                    i.fas.fa-oil-can 
+                | Feedback
+            
+            .sb-sidenav-menu-heading
+                | Assets
+            
+            a.nav-link(href='items.html')
+                .sb-nav-link-icon
+                    i.fas.fa-shopping-basket
+                | Items + Bundles
+            
+            a.nav-link(href='currencies.html')
+                .sb-nav-link-icon
+                    i.fas.fa-ticket-alt
+                | Currencies
+
+            a.nav-link(href='imagery.html')
+                .sb-nav-link-icon
+                    i.fas.fa-images
+                | Imagery
+            
+            a.nav-link(href='price-skus.html')
+                .sb-nav-link-icon
+                    i.fas.fa-money-bill-alt
+                | Price SKUs
+            
+            a.nav-link(href='localization.html')
+                .sb-nav-link-icon
+                    i.fas.fa-map
+                | Localization
+            
+            //-
+                a.nav-link.collapsed(href='#', data-bs-toggle='collapse' data-bs-target='#collapseLayouts' aria-expanded='false' aria-controls='collapseLayouts')
+                    .sb-nav-link-icon
+                        i.fas.fa-columns
+                    | Layouts
+                    .sb-sidenav-collapse-arrow
+                        i.fas.fa-angle-down
+                #collapseLayouts.collapse(aria-labelledby='headingOne', data-bs-parent='#sidenavAccordion')
+                    nav.sb-sidenav-menu-nested.nav
+                        a.nav-link(href='layout-static.html') Static Navigation
+                        a.nav-link(href='layout-sidenav-light.html') Light Sidenav
+                
+                a.nav-link.collapsed(href='#', data-bs-toggle='collapse' data-bs-target='#collapsePages' aria-expanded='false' aria-controls='collapsePages')
+                    .sb-nav-link-icon
+                        i.fas.fa-book-open
+                    | Pages
+                    .sb-sidenav-collapse-arrow
+                        i.fas.fa-angle-down
+                #collapsePages.collapse(aria-labelledby='headingTwo', data-bs-parent='#sidenavAccordion')
+                    nav.sb-sidenav-menu-nested.nav.accordion#sidenavAccordionPages
+                        a.nav-link.collapsed(href='#', data-bs-toggle='collapse' data-bs-target='#pagesCollapseAuth' aria-expanded='false' aria-controls='pagesCollapseAuth')
+                            | Authentication
+                            .sb-sidenav-collapse-arrow
+                                i.fas.fa-angle-down
+                        #pagesCollapseAuth.collapse(aria-labelledby='headingOne', data-bs-parent='#sidenavAccordionPages')
+                            nav.sb-sidenav-menu-nested.nav
+                                a.nav-link(href='login.html') Login
+                                a.nav-link(href='register.html') Register
+                                a.nav-link(href='password.html') Forgot Password
+                        a.nav-link.collapsed(href='#', data-bs-toggle='collapse' data-bs-target='#pagesCollapseError' aria-expanded='false' aria-controls='pagesCollapseError')
+                            | Error
+                            .sb-sidenav-collapse-arrow
+                                i.fas.fa-angle-down
+                        #pagesCollapseError.collapse(aria-labelledby='headingOne', data-bs-parent='#sidenavAccordionPages')
+                            nav.sb-sidenav-menu-nested.nav
+                                a.nav-link(href='401.html') 401 Page
+                                a.nav-link(href='404.html') 404 Page
+                                a.nav-link(href='500.html') 500 Page
+                            
+                .sb-sidenav-menu-heading
+                    | Addons
+                
+                a.nav-link(href='charts.html')
+                    .sb-nav-link-icon
+                        i.fas.fa-chart-area
+                    | Charts
+                    
+                a.nav-link(href='tables.html')
+                    .sb-nav-link-icon
+                        i.fas.fa-table
+                    | Tables
+    //-               
+        .sb-sidenav-footer
+            
+            .small Logged in as:
+            | Start Bootstrap

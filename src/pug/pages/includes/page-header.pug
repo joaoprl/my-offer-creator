@@ -1,0 +1,11 @@
+// h1.mt-4 #{pageTitle}
+if index
+    ol.breadcrumb.mb-4
+        .breadcrumb-nav
+            li.breadcrumb-item.active #{pageTitle}
+else
+    ol.breadcrumb.mb-4
+        .breadcrumb-nav
+            li.breadcrumb-item
+                a(href='index.html') Offers
+            li.breadcrumb-item.active #{pageTitle}
