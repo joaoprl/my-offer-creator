@@ -1,0 +1,14 @@
+name: build
+on: [push]
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: install and build
+        run: |
+          npm ci
+          npm run build
