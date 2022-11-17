@@ -14,12 +14,9 @@ block content
     .container-fluid.px-4
         include includes/page-header.pug
 
-        .row
-            .col-xl-1.col-md-6
-                a(href='offers-new.html')
-                    input.btn.btn-success.upper-table-btn(type='button', value='New Offer')
-            .col-xl-1.col-md-6
-                input.btn.btn-primary.upper-table-btn(type='button', value='Export Offers')
+        a(href='offers-new.html')
+            input.btn.btn-success.upper-table-btn(type='button', value='New Offer')
+        input.btn.btn-primary.upper-table-btn(type='button', value='Export Offers')
 
         //-
             .row
