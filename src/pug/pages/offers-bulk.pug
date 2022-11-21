@@ -2,14 +2,19 @@ extends ../layouts/dashboard.pug
 
 block config
     - var bodyClass = 'sb-nav-fixed'
-    - var pageTitle = 'New Offers';
+    - var pageTitle = 'Offers Bulk';
     - var index = true;
     - var sidenavStyle = 'sb-sidenav-dark'
+    
+prepend css
+    //- Load Simple DataTables Stylesheet
+    link(href='https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css', rel='stylesheet')
 
 block content
     .container-fluid.px-4
         include includes/page-header.pug
-    
+        
+        // Common fields
         .row 
             form.row.g-3
                 // Row 1
@@ -35,49 +40,10 @@ block content
                         input.form-check-input(type="checkbox", role="switch")
                         label.form-label Enable
                 
-                // Row 2
-                .col-md-3 
-                    label.form-label Price SKU
-                    select.form-select
-                        option(selected) $24.99
-                        option $0.99
-                        option $4.99
-                        option $10.99
-                        option $49.99
-                .col-md-1.align-self-end
-                    input.btn.btn-primary.btn-offer-predict(type='button', value='Predict')
-                .col-md-3
-                    label.form-label Segment ID
-                    select.form-select
-                        option(selected) A4R5-XXXX-YYYY-ZZZZ - Dolphins
-                        option A4R5-XXXX-YYYY-ZZZZ - Tuna
-                        option A4R5-XXXX-YYYY-ZZZZ - Nemo
-                        option A4R5-VVVV-WWWW-XXXX - Dory
-                        option A4R5-WWWW-XXXX-YYYY - Turtle
-                .col-md-1.align-self-end
-                    input.btn.btn-primary.btn-offer-predict(type='button', value='Predict')
-                .col-md-3
-                    label.form-label Item Bundle ID
-                    select.form-select
-                        option(selected) id_12345 - Nov_2022_token_multi
-                        option id_67890 - Nov_2022_currency_multi
-                        option id_23456 - Nov_2022_gems_multi
-                        option id_78901 - Nov_2022_shards_multi
-                .col-md-1.align-self-end
-                    input.btn.btn-primary.btn-offer-predict(type='button', value='Create', data-bs-toggle="modal" data-bs-target="#bundleCreateModal")
-
                 // Row 3
-                .col-md-2
-                    label.form-label Discount
-                    .input-group
-                        input.form-control(type="number", min="1", max="100", value="30")
-                        span.input-group-text %
                 .col-md-2
                     label.form-label Stock
                     input.form-control(type="number", min="1", max="10000", value="20")
-                .col-md-8
-                
-                // Row 4
                 .col-md-2
                     label.form-label Offer Type
                     select.form-select
@@ -96,7 +62,7 @@ block content
                         option(selected) Please select a combo type
                         option combo 1
                         option combo 2
-                .col-md-4
+                .col-md-8
 
                 // Row 5
                 .col-md-5
@@ -146,12 +112,18 @@ block content
                     label.form-label Image Preview
                     img(src="https://wwechampions.com/static/media/banner.2d4180a4.png" class="img-thumbnail")
 
-                // Create offer button
-                .row
-                    .col-md-2
-                        a(href='index.html')
-                            input.btn.btn-success.btn-offer-predict(type='button', value='Create Offer', style="margin-top: 10px; margin-bottom: 10px")
 
+        // Datatable
+        .row
+            .card.mb-4
+                .card-body
+                    include includes/bulk-datatable.pug
+                
+        // Create offer button
+        .row
+            .col-md-2
+                a(href='index.html')
+                    input.btn.btn-success.btn-offer-predict(type='button', value='Create Offer', style="margin-top: 10px; margin-bottom: 10px")
     // Bundle creation modal           
     .modal.fade(tabindex="-1", aria-labelledby="bundleCreateModalLabel" aria-hidden="true")#bundleCreateModal
         .modal-dialog.modal-lg
@@ -242,5 +214,7 @@ block content
                 .modal-footer
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>              
-
-                
+append scripts    
+    //- Load Simple DataTables Scripts
+    script(src='https://cdn.jsdelivr.net/npm/simple-datatables@latest', crossorigin='anonymous')
+    script(src='js/datatables-simple-demo.js')
